@@ -1,7 +1,5 @@
 package com.wipro.telestra_assignment.pages;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -56,7 +54,7 @@ public class HomePage extends BasePage {
 		elementUtil.doClick(ItemTitle);
 	}
 	
-	public void verifyAddtoCartItem() throws ParseException {
+	public void verifyAddtoCartItem() {
 		System.out.println("Entering new Window handles");
 		String mainWindow=driver1.getWindowHandle();
 		 Set<String> set =driver1.getWindowHandles();

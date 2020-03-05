@@ -30,7 +30,7 @@ public class FlipkartTest extends BasePage {
 	}
 
 	@Test(priority = 2, description = "verify Login Test....")
-	public void loginSearchPurchaseTest() throws InterruptedException, ParseException {
+	public void loginSearchPurchaseTest() throws InterruptedException {
 		loginPage = new LoginPage(driver1);
 		homePage = new HomePage(driver1);
 		loginPage.doLogin();
@@ -39,7 +39,7 @@ public class FlipkartTest extends BasePage {
 	}
 		
 
-	@AfterTest(alwaysRun=true)
+	//@AfterTest(alwaysRun=true)
 	public void tearDown() {
 		driver1.quit();
 	}
