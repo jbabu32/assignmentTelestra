@@ -1,19 +1,15 @@
 package com.wipro.telestra_assignment;
 
-import java.text.ParseException;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.wipro.telestra_assignment.base.BasePage;
 import com.wipro.telestra_assignment.pages.HomePage;
 import com.wipro.telestra_assignment.pages.LoginPage;
+import com.wipro.telestra_assignment.pages.PurchasePage;
 
 public class FlipkartTest extends BasePage {
 
@@ -21,6 +17,7 @@ public class FlipkartTest extends BasePage {
 	Properties prop;
 	LoginPage loginPage;
 	HomePage homePage;
+	PurchasePage purchasePage;
 
 	@Test(priority = 1, description = "verify Sign up link Test....")
 	public void verifySignUpLinkTest() {
@@ -33,13 +30,14 @@ public class FlipkartTest extends BasePage {
 	public void loginSearchPurchaseTest() throws InterruptedException {
 		loginPage = new LoginPage(driver1);
 		homePage = new HomePage(driver1);
+		purchasePage = new PurchasePage(driver1);
 		loginPage.doLogin();
 		homePage.verifySearchItem();
-		homePage.verifyAddtoCartItem();
+		purchasePage.verifyAddtoCartItem();
 	}
 		
 
-	//@AfterTest(alwaysRun=true)
+	@AfterTest(alwaysRun=true)
 	public void tearDown() {
 		driver1.quit();
 	}
